@@ -1,0 +1,241 @@
+
+.wd-nav-container {
+  display: flex;
+}
+.wd-nav-bar {
+  list-style-type: none;
+  width: 20%;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  min-width: 80px;
+}
+
+/* .wd-nav-bar ul { */
+/*   width: 100%; */
+/*   list-style-type: none; */
+/*   padding 0; */
+/*   margin 0; */
+/* } */
+/**/
+/* .wd-nav-bar li{ */
+/*   padding: 10px; */
+/* } */
+
+.wd-content {
+  /* flex: 1 1 auto; */
+  /* flex-grow: 1; */
+  /* padding: 10px; */
+  margin-left: 25%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 500px;
+}
+
+/* Reset some default styles */
+body, header {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/* Add space around the header */
+header {
+  padding: 10px;
+}
+
+/* Style the search container */
+.wd-search-container {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 10px; /* Added margin to the right */
+  width: 95%;
+}
+
+/* Style the search input */
+.wd-search-container input[type="text"] {
+  border: none;
+  background-color: lightgray;
+  color: darkgray;
+  padding-left: 5px;
+  width: 100%; /* Set the input field to occupy remaining space */
+}
+
+/* Add space between the search input and gear icon */
+/* .search-container input[type="text"] + i { */
+/*   margin-right: 10px; */
+/* } */
+/* Style the gear icon */
+.fa-cog {
+  color: black;
+  margin-left: 10px;
+  position: absolute;
+}
+
+/* Increase the gear icon size */
+.fa-cog:before {
+  font-size: 20px;
+}
+
+/* Increase the highlight area of the input field */
+.wd-search-container input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px lightblue;
+}
+
+/* Style the tabs */
+.wd-tabs {
+  list-style-type: none;
+  display: flex;
+  margin-top: 10px;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Style the tab items */
+.wd-tabs li {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding-bottom: 5px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Style the tab text */
+.wd-tabs li span {
+  border-bottom: 2px solid transparent;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Style the active tab */
+.wd-tabs li.wd-active-tab span {
+  border-color: blue;
+}
+
+/* Increase the space between text and underline */
+.wd-tabs li.wd-active-tab span {
+  padding-bottom: 3px;
+}
+
+.wd-image-container {
+  position: relative;
+  background-color: white;
+  max-height: 300px;
+}
+
+.wd-image {
+  display: block;
+  width: 106%;
+  /* height: auto; */
+  height: 300px;
+  object-fit: cover;
+}
+
+
+/* The overlay effect - lays on top of the container and over the image */
+.wd-image-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.wd-image-container:hover .wd-image-overlay {
+  opacity: 1;
+}
+
+.wd-tuits-container {
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: -apple-system;
+  font-size: 12px;
+}
+
+.wd-tuits-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wd-tuits-list li {
+  /* background-color: #f7f7f7; */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.wd-category {
+  color: gray;
+}
+
+.wd-topic {
+  color: black;
+  font-weight: bold;
+}
+
+.wd-amount {
+  color: gray;
+}
+
+.wd-tuit {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  position: relative;
+  /* justify-content: space-between; */
+}
+
+.wd-dots {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  margin-left: auto;
+  top: 0;
+  right: 0;
+}
+
+.wd-dots-text {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.wd-dots i {
+  color: gray;
+  cursor: pointer;
+}
+
+.wd-md-form.wd-mt-0{
+  width:auto;
+  display:flex;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.fa-search.wd-search-button{
+  position:absolute;
+  margin-left: 5px;
+  color: gray;
+}
+
+.wd-search-button + input{
+  padding-left: 25px;
+}
