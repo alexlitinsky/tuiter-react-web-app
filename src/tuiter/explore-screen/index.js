@@ -20,17 +20,17 @@ function ExploreScreen() {
       </div>
       <ul className="nav nav-pills mb-2 mt-2">
         <li className="nav-item">
-          <a href="#" className="nav-link active">For You</a>
+          <a href="../explore-screen/index.js" className="nav-link active">For You</a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">Trending</a>
+          <a href="../explore-screen/index.js" className="nav-link">Trending</a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">News</a>
+          <a href="../explore-screen/index.js" className="nav-link">News</a>
         </li>
       </ul>
       <div className="position-relative mb-2">
-        <img src="/images/starship-in-clouds.jpg" className="w-100" alt="starship image" />
+        <img src="/images/starship-in-clouds.jpg" className="w-100" alt="starship flying in the clouds" />
         <h1 className="position-absolute wd-nudge-up text-white">
           SpaceX Starship</h1>
       </div>
