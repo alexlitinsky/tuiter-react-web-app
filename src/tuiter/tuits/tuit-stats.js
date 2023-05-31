@@ -1,27 +1,26 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { incrementLikes, decrementLikes } from "../reducers/tuit-likes-reducer";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { likeTuit } from "../reducers/tuits-reducer";
 
 const TuitStats = ({ tuit }) => {
   const dispatch = useDispatch();
-  const { likes } = useSelector((state) => state.tuitLikes);
-
-  const toggleLike = () => {
-    if (likes.includes(tuit._id)) {
-      dispatch(decrementLikes(tuit._id));
-    } else {
-      dispatch(incrementLikes(tuit._id));
-    }
-  };
-  const heartIconClassName = likes.includes(tuit._id) ? "fas fa-heart red" : "fas fa-heart";
+  const likeToggle = (tuit) => {
+    dispatch(likeTuit(tuit))
+  }
 
   return (
     <div>
       <span>
-        <i className="fas fa-comment"></i> &nbsp; {tuit.replies} &nbsp;&nbsp;&nbsp;&nbsp;
-        <i className="fas fa-reply"></i> &nbsp; {tuit.retuits} &nbsp;&nbsp;&nbsp;&nbsp;
-        <i className={heartIconClassName} onClick={toggleLike}></i> &nbsp; {tuit.likes} &nbsp;&nbsp;&nbsp;&nbsp;
-        <i className="fas fa-download"></i> &nbsp;&nbsp;&nbsp;&nbsp;
+        <i className="bi bi-chat-dots"></i> {tuit.replies}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <i className="bi bi-arrow-repeat"></i> {tuit.retuits}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <i className={`bi ${tuit.liked ? "bi-heart-fill text-danger" : "bi-heart"}`} onClick={() => likeToggle(tuit)} style={{ "cursor": "pointer" }}></i> {tuit.likes} &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <i className="bi bi-download"></i>
       </span>
     </div>
   );

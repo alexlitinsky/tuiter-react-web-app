@@ -12,11 +12,10 @@ import MessagesScreen from "./messages-screen";
 import WhoToFollowList from "./who-to-follow-list";
 import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuits-reducer";
-import tuitLikesReducer from "./reducers/tuit-likes-reducer";
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
 const store = configureStore(
-  { reducer: { who: whoReducer, tuits: tuitsReducer, tuitLikes: tuitLikesReducer } });
+  { reducer: { who: whoReducer, tuits: tuitsReducer } });
 
 function Tuiter() {
   return (

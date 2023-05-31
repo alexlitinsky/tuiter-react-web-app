@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { createTuit } from "./reducers/tuits-reducer";
 import { useDispatch } from "react-redux";
+import { AiOutlinePicture } from 'react-icons/ai';
+import { HiOutlineGift } from 'react-icons/hi';
+import { MdFormatListBulleted } from 'react-icons/md';
+import { BsEmojiSmile } from 'react-icons/bs';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { BiBold, BiItalic } from 'react-icons/bi';
+import { TbCalendarStats } from 'react-icons/tb';
 
 const WhatsHappening = () => {
   let [whatsHappening, setWhatsHappening] = useState('');
@@ -15,7 +22,7 @@ const WhatsHappening = () => {
   return (
     <div className="row">
       <div className="col-auto">
-        <img src="/images/nasa.png" width={60} />
+        <img src="/images/nasa-logo.jpg" width={60} />
       </div>
       <div className="col-10">
         <textarea value={whatsHappening} placeholder="What's happening?"
@@ -29,7 +36,7 @@ const WhatsHappening = () => {
           </button>
           <div className="text-primary fs-2">
             <AiOutlinePicture className="me-3"></AiOutlinePicture>
-            <HiOutlineGif className="me-3"></HiOutlineGif>
+            <HiOutlineGift className="me-3"></HiOutlineGift>
             <MdFormatListBulleted className="me-3"></MdFormatListBulleted>
             <BsEmojiSmile className="me-3"></BsEmojiSmile>
             <TbCalendarStats className="me-3"></TbCalendarStats>
