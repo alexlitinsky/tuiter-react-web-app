@@ -36,7 +36,7 @@ const tuitsSlice = createSlice({
       })
     },
     likeTuit(state, action) {
-      const tuit = state.tuits.find((tuits) => tuits._id == action.payload._id)
+      const tuit = state.tuits.find((tuits) => tuits._id === action.payload._id)
       tuit.liked = !tuit.liked
       if (tuit.liked) {
         tuit.likes += 1;
