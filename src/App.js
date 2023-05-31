@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/"
             element={
-              <Navigate to="/labs" />} />
+              <Navigate to="/labs/a3" />} />
           <Route path="/labs/*"
             element={<Labs />} />
           <Route path="/hello"
