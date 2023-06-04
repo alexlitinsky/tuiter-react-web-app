@@ -19,8 +19,7 @@ const TuitStats = ({ tuit }) => {
         &nbsp;&nbsp;
         <i className={`bi ${tuit.liked ? "bi-heart-fill text-danger" : "bi-heart"}`} onClick={() => likeToggle(tuit)} style={{ "cursor": "pointer" }}></i> {tuit.likes} &nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;
-        <i className="bi bi-download"></i>
+        <span className="d-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"> <i className="bi bi-download"></i> </span>
       </span>
     </div>
   );
