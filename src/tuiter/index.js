@@ -3,7 +3,7 @@ import Nav from "../nav";
 import NavigationSidebar from "./navigation-sidebar";
 import HomeScreen from "./home-screen";
 import ExploreScreen from "./explore-screen";
-import ProfileScreen from "./profile-screen";
+// import ProfileScreen from "./profile-screen";
 import BookmarksScreen from "./bookmarks-screen";
 import NotificationsScreen from "./notifications-screen";
 import MoreScreen from "./more-screen";
@@ -14,8 +14,13 @@ import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuits-reducer";
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
+import ProfileScreen from "./user/profile-screen";
+import LoginScreen from "./user/login-screen";
+import RegisterScreen from "./user/register-screen";
+import authReducer from "./reducers/auth-reducer";
+
 const store = configureStore(
-  { reducer: { who: whoReducer, tuits: tuitsReducer } });
+  { reducer: { who: whoReducer, tuits: tuitsReducer, user: authReducer } });
 
 function Tuiter() {
   return (
@@ -35,6 +40,8 @@ function Tuiter() {
             <Route path="/messages" element={<MessagesScreen />} />
             <Route path="/more" element={<MoreScreen />} />
             <Route path="/profile" element={<ProfileScreen />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/register" element={<RegisterScreen />} />
           </Routes>
         </div>
         <div className="col-3 col-lg-3 col-xl-3 col-xxl-3 d-none d-lg-block">

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavigationSidebar = () => {
   const { pathname } = useLocation();
   const [ignore, tuiter, active] = pathname.split("/"); // eslint-disable-line no-unused-vars
+  const { currentUser } = useSelector((state) => state.user);
 
   const links = [
     { name: "home", icon: "bi bi-house" },
@@ -28,6 +30,9 @@ const NavigationSidebar = () => {
           <span className="d-none d-xl-inline ms-2">{link.name}</span> {/* Hidden text for large column size */}
         </Link>
       ))}
+      {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
+      {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
+      {currentUser && <Link className="list-group" to="/tuiter/profile"> Profile </Link>}
     </div>
   );
 };
