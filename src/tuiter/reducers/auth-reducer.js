@@ -11,6 +11,7 @@ const authSlice = createSlice({
       state.currentUser = payload;
     },
     [registerThunk.fulfilled]: (state, { payload }) => {
+      console.log("register payload: ", payload);
       state.currentUser = payload;
     },
     [logoutThunk.fulfilled]: (state) => {
