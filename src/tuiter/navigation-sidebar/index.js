@@ -17,6 +17,10 @@ const NavigationSidebar = () => {
     { name: "profile", icon: "bi bi-person" },
     { name: "more", icon: "bi bi-three-dots" },
   ];
+  if (!currentUser) {
+    links.push({ name: "login", icon: "bi bi-door-open-fill" });
+    links.push({ name: "register", icon: "bi bi-person-plus-fill" });
+  }
 
   return (
     <div className="list-group">
@@ -30,9 +34,6 @@ const NavigationSidebar = () => {
           <span className="d-none d-xl-inline ms-2">{link.name}</span> {/* Hidden text for large column size */}
         </Link>
       ))}
-      {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
-      {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
-      {currentUser && <Link className="list-group" to="/tuiter/profile"> Profile </Link>}
     </div>
   );
 };
